@@ -15,7 +15,9 @@
     }
   },
   "dependencies": {
-    "conventional-changelog": "0.0.17",
+    "conventional-changelog": "^1.0.0",
+    "conventional-changelog-core": "^1.5.0",
+    "git-js": "^1.1.1",
     "github-url-from-git": "^1.4.0"
   },
   "devDependencies": {
@@ -53,7 +55,6 @@
     "coverage": "nyc report",
     "coverage:upload": "npm run coverage -- --reporter=lcovonly && coveralls < coverage/lcov.info",
     "pretest:suite": "npm run build && npm run build:tests",
-    "test": "npm run test:style && npm run test:suite",
     "test:style": "standard",
     "test:suite": "nyc tap --no-cov .test/{scenarios,specs}/*.js"
   }
