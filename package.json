@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "babel": "^5.5.8",
+    "chai": "^3.5.0",
     "coveralls": "^2.11.2",
     "mkdirp": "^0.5.1",
     "mocha": "^3.1.0",
@@ -50,6 +51,7 @@
   "scripts": {
     "build": "rimraf dist && mkdirp dist && babel src --out-dir dist",
     "build:tests": "rimraf .test && mkdirp .test && babel test --out-dir .test",
+    "test": "mocha test/integration/tests.js",
     "coverage": "nyc report",
     "coverage:upload": "npm run coverage -- --reporter=lcovonly && coveralls < coverage/lcov.info",
     "pretest:suite": "npm run build && npm run build:tests",

@@ -1,3 +1,5 @@
+'use strict';
+
 const changelog = require('conventional-changelog');
 const fs = require('fs');
 
@@ -17,14 +19,18 @@ const yamiToAngular = function(commit, cb) {
 }
 
 module.exports = function (pluginConfig, pkg, cb) {
-  const wstream = fs.createWriteStream('changelog.md');
+  let notes = "";
   
   const stream = changelog({
     preset: 'angular',
     transform: yamiToAngular
   });
   
-  stream.pipe(wstream);
+  stream.on('data', function(data) {
+    notes += data;
+  })
   
-  stream.on('end', cb);
+  stream.on('end', function() {
+    cb(notes);
+  });
 }
