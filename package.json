@@ -1,9 +1,10 @@
 {
-  "name": "@semantic-release/release-notes-generator",
+  "name": "@yamikuronue/release-notes-generator",
+  "version": "0.1.0",
   "description": "generates the release notes/changelog",
   "author": "Stephan Bönnemann <stephan@boennemann.me> (http://boennemann.me)",
   "bugs": {
-    "url": "https://github.com/semantic-release/release-notes-generator/issues"
+    "url": "https://github.com/yamikuronue/release-notes-generator/issues"
   },
   "config": {
     "nyc": {
@@ -27,7 +28,7 @@
     "standard": "^4.2.1",
     "tap": "^1.2.0"
   },
-  "homepage": "https://github.com/semantic-release/release-notes-generator#readme",
+  "homepage": "https://github.com/yamikuronue/release-notes-generator#readme",
   "keywords": [
     "semantic-release",
     "author",
@@ -44,7 +45,7 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/semantic-release/release-notes-generator.git"
+    "url": "git+https://github.com/yamikuronue/release-notes-generator.git"
   },
   "scripts": {
     "build": "rimraf dist && mkdirp dist && babel src --out-dir dist",
